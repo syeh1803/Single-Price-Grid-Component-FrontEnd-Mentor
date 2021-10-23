@@ -1,0 +1,307 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: "Karla", sans-serif;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Custom Additions Below */
+:root,
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* mobile */
+body {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(204, 43%, 93%);
+}
+
+.container {
+  padding: 7rem 3rem;
+  height: auto;
+  max-width: 63.5rem;
+}
+
+.price-block {
+  display: grid;
+  grid-template-rows: repeat (3, auto);
+}
+
+.price-block__join--container,
+.price-block__subscription--container,
+.price-block__why--container {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem;
+  gap: 1.7rem;
+}
+
+.price-block__join {
+  background-color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.price-block__subscription {
+  background-color: hsl(179, 62%, 43%);
+}
+
+.price-block__why {
+  background-color: hsl(179, 47%, 52%);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.join__heading {
+  font-size: 2rem;
+  color: hsl(179, 62%, 43%);
+  padding: 0.6rem 0;
+}
+
+.join__subtitle {
+  color: hsl(71, 73%, 54%);
+  font-size: 1.6rem;
+}
+
+.join__description {
+  color: hsl(218, 22%, 67%);
+  font-size: 1.35rem;
+  line-height: 2;
+  opacity: 0.75;
+  padding-bottom: 1.5rem;
+}
+
+.price-block__subscription,
+.price-block__why {
+  color: hsl(204, 43%, 93%);
+  font-weight: 400;
+}
+
+.subscription__heading,
+.why__heading {
+  font-size: 1.7rem;
+  letter-spacing: 0.05rem;
+}
+
+.subscription__price {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.subscription__price span {
+  padding-left: 1.4rem;
+  font-size: 1.45rem;
+  opacity: 0.5;
+}
+
+.subscription__access {
+  font-size: 1.55rem;
+  opacity: 0.8;
+}
+
+.price-block__subscription a {
+  background-color: hsl(71, 73%, 54%);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  box-shadow: 0px 20px 33px -17px #473c47;
+}
+
+.price-block__why ul {
+  font-size: 1.4rem;
+  opacity: 0.6;
+}
+
+.price-block__why ul :not(:last-child) {
+  padding-bottom: 0.7rem;
+}
+
+/* desktop */
+@media screen and (min-width: 1440px) {
+  .price-block {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 0px 0px;
+    grid-template-areas: "community community community community" "subscription subscription why why";
+  }
+
+  .price-block__join {
+    padding: 0.5rem 1rem 0 1rem;
+    grid-area: community;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .join__heading {
+      font-size: 2.3rem;
+  }
+
+  .join__subtitle {
+      font-size: 1.8rem;
+  }
+
+  .join__description {
+      font-size: 1.5rem;
+  }
+
+  .price-block__subscription {
+    padding: 1.5rem 1rem 0.5rem 0.5rem;
+    grid-area: subscription;
+    border-radius: 0 0 0 0.5rem;
+  }
+
+  .subscription__access {
+      font-size: 1.5rem;
+  }
+
+  .price-block__subscription a {
+    margin-bottom: 1.5rem;
+  }
+
+  .price-block__why {
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    grid-area: why;
+    border-radius: 0 0 0.5rem 0;
+  }
+}
